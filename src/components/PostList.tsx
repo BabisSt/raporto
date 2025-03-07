@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Post, { postDataProps } from "@/components/Post";
+import Post from "@/components/Post";
+import { PostListProps } from "@/app/interfaces";
 
 
-interface PostListProps {
-	posts: postDataProps[]
-  }
+
 
 export default function PostList({ posts } : PostListProps) {
   const [visiblePosts, setVisiblePosts] = useState(5);

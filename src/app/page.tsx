@@ -1,7 +1,13 @@
 import Image from 'next/image';
 import Carousel from "@/components/Carousel";
 import PostList from "@/components/PostList"; 
-
+import PinnedPost from "@/components/PinnedPost"; 
+import AuthorTeam from '@/components/AuthorTeam';
+import ContactUs from '@/components/ContactUs';
+import MovieSuggestions from '@/components/MovieSuggestions';
+import SocialMedia from '@/components/SocialMedia';
+import SoundtrackOfMonth from '@/components/SoundtrackOfMonth';
+import TrailerOfWeek from '@/components/TrailerOfWeek';
 export default async function HomePage() {
   const posts = [
     {
@@ -93,7 +99,19 @@ export default async function HomePage() {
 
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 p-4">
         <PostList posts={posts} />
+		 {/* Sidebar */}
+		 <div className="flex flex-col p-4 space-y-6 w-full lg:w-[350px]">
+          <PinnedPost post={posts[0]} />
+          <SocialMedia />
+          <SoundtrackOfMonth />
+          <TrailerOfWeek />
+          <MovieSuggestions />
+          <AuthorTeam />
+          <ContactUs />
+        </div>
       </div>
+	   
+      
     </div>
   );
 }
